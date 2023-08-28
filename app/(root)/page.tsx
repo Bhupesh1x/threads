@@ -6,6 +6,7 @@ import Pagination from "@/components/shared/Pagination";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreads } from "@/lib/actions/thread.action";
+import { useClerk } from "@clerk/clerk-react";
 
 async function Home({
   searchParams,
@@ -13,7 +14,13 @@ async function Home({
   searchParams: { [key: string]: string | undefined };
 }) {
   const user = await currentUser();
-  if (!user) return null;
+  const { signOut } = useClerk();
+
+  function handleSignOut() {
+    signOut();
+  }
+
+  if (!user) return handleSignOut();
 
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
