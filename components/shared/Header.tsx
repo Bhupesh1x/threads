@@ -1,8 +1,10 @@
+"use client";
+
 import { SignedIn, SignOutButton, OrganizationSwitcher } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { dark } from "@clerk/themes";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const router = useRouter();

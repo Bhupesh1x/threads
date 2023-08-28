@@ -100,10 +100,10 @@ function ThreadCard({
                 />
               </div>
 
-              {isComment && comments.length > 0 && (
+              {isComment && comments?.length > 0 && (
                 <Link href={`/thread/${id}`}>
                   <p className="mt-1 text-subtle-medium text-gray-1">
-                    {comments.length} repl{comments.length > 1 ? "ies" : "y"}
+                    {comments?.length} repl{comments?.length > 1 ? "ies" : "y"}
                   </p>
                 </Link>
               )}
@@ -112,7 +112,7 @@ function ThreadCard({
         </div>
       </div>
 
-      {!isComment && comments.length > 0 && (
+      {!isComment && comments?.length > 0 && (
         <div className="ml-1 mt-3 flex items-center gap-2">
           {comments.slice(0, 2).map((comment, index) => (
             <Image
