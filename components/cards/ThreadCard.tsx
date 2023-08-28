@@ -36,7 +36,9 @@ function ThreadCard({
   isComment,
 }: Props) {
   return (
-    <article className="p-7 rounded-xl bg-dark-2">
+    <article
+      className={`${isComment ? "px-0 xs:px-7" : "rounded-xl bg-dark-2 p-7"} `}
+    >
       <div className="flex gap-4">
         <div className="flex flex-col items-center">
           <Link href={`/profile/${author.id}`} className="relative h-11 w-11">
@@ -58,7 +60,7 @@ function ThreadCard({
 
           <p className="mt-2 text-small-regular text-light-2">{content}</p>
 
-          <div className="flex gap-3.5 mt-5">
+          <div className={`${isComment && "mb-6"} flex gap-3.5 mt-5`}>
             <Link href={`/thread/${id}`}>
               <Image
                 src="/assets/reply.svg"
@@ -70,7 +72,7 @@ function ThreadCard({
             </Link>
           </div>
 
-          {isComment && comments.length > 0 && (
+          {isComment && comments?.length > 0 && (
             <Link
               href={`/thread/${id}`}
               className="mt-1 text-subtle-medium text-gray-1"
