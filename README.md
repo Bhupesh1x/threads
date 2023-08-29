@@ -5,4 +5,4 @@ Profile Page, Activity on your thread and Onboarding.
 
 Video Demonstrating All The Main Functionalities :
 
-![threads_video](https://github.com/Bhupesh1x/threads/assets/78196557/e6bef3df-db75-4a86-914a-6d3a4f7f1567)
+![threads_video](https://res.cloudinary.com/atm1x/image/upload/v1693291337/threads_video_rudads.gif)
