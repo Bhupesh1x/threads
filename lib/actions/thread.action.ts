@@ -64,7 +64,6 @@ export async function createThread({
   threadImage,
 }: Params) {
   try {
-    console.log("threadImage", threadImage);
     connectToDB();
 
     const communityIdObject = await Community.findOne(

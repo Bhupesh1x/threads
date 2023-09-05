@@ -53,8 +53,6 @@ export async function uploadFile(file: any) {
       }
     );
     const res = await fetched.json();
-    console.log(res, "res");
-    console.log(fetched, "fetched");
     const { url } = res;
     return url;
   } catch (error) {
