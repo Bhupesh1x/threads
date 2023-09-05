@@ -28,7 +28,6 @@ function PostThread({ userId }: { userId: string }) {
   const { organization } = useOrganization();
 
   const form = useForm({
-    resolver: zodResolver(threadValidations),
     defaultValues: {
       thread: "",
       accountId: userId,
@@ -36,7 +35,7 @@ function PostThread({ userId }: { userId: string }) {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof threadValidations>) => {
+  const onSubmit = async (values: any) => {
     await createThread({
       text: values.thread,
       author: userId,
