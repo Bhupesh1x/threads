@@ -17,11 +17,9 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
   return (
     <article className="user-card">
       <div className="user-card_avatar">
-        <Image
+        <img
           src={imgUrl}
-          className="rounded-full "
-          width={48}
-          height={48}
+          className="rounded-full h-[3rem] w-[3rem]"
           alt="profile image"
         />
 

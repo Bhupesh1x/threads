@@ -13,10 +13,10 @@ async function Home({
   searchParams: { [key: string]: string | undefined };
 }) {
   const user = await currentUser();
-  if (!user) return null;
+  if (!user) redirect("/onboarding");
 
   const userInfo = await fetchUser(user.id);
-  if (!userInfo?.onboarded) redirect("/onboarding");
+  if (!userInfo) redirect("/onboarding");
 
   const result = await fetchThreads(
     searchParams.page ? +searchParams.page : 1,
@@ -43,6 +43,7 @@ async function Home({
                 community={thread.community}
                 createdAt={thread.createdAt}
                 comments={thread.children}
+                threadImage={thread?.threadImage}
               />
             ))}
           </>

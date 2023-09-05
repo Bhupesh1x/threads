@@ -28,6 +28,7 @@ async function page({ params }: { params: { id: string } }) {
         community={thread?.community}
         createdAt={thread?.createdAt}
         comments={thread?.comments}
+        threadImage={thread?.threadImage}
       />
 
       <div>

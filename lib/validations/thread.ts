@@ -1,6 +1,7 @@
 import * as z from "zod";
 
 export const threadValidations = z.object({
+  threadImage: z.string().url().nonempty(),
   thread: z
     .string()
     .nonempty()

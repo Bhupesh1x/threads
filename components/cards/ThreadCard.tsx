@@ -25,6 +25,7 @@ interface Props {
     };
   }[];
   isComment?: boolean;
+  threadImage?: string;
 }
 
 function ThreadCard({
@@ -35,6 +36,7 @@ function ThreadCard({
   createdAt,
   comments,
   isComment,
+  threadImage,
 }: Props) {
   return (
     <article
@@ -65,6 +67,13 @@ function ThreadCard({
             </Link>
 
             <p className="mt-2 text-small-regular text-light-2">{content}</p>
+            {threadImage && (
+              <img
+                src={threadImage}
+                alt=""
+                className="w-full rounded-md my-4 max-h-[25rem]"
+              />
+            )}
 
             <div className={`${isComment && "mb-10"} mt-5 flex flex-col gap-3`}>
               <div className="flex gap-3.5">
